@@ -24,7 +24,7 @@
  * THE SOFTWARE.
  */
 
-namespace danielgp\rightsMySQL;
+namespace danielgp\rights_mysql;
 
 /**
  * This script has been made to extract all users and their grants from Productrion network

@@ -1,5 +1,5 @@
 {
-    "name": "danielgp/rightsMySQL",
+    "name": "danielgp/rights-mysql",
     "description": "Creates a dump of all MySQL accounts and their respective rights in a web page (ideal for MySQL upgrade or relocation)",
     "type": "library",
     "license": "MIT",

@@ -26,4 +26,4 @@
 
 require_once('../vendor/autoload.php');
 
-$app = new danielgp\rightsMySQL\ReadingSecurity();
+$app = new danielgp\rights_mysql\ReadingSecurity();
