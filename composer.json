@@ -1,0 +1,33 @@
+{
+    "name": "danielgp/rightsMySQL",
+    "description": "Creates a dump of all MySQL accounts and their respective rights in a web page (ideal for MySQL upgrade or relocation)",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniel Popiniuc",
+            "email": "danielpopiniuc@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.5",
+        "ext-mysqli": "*",
+        "danielgp/common-lib": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "": "source/info/",
+            "danielgp\\common_lib\\source\\": "vendor/danielgp/common-lib/source/"
+        },
+        "classmap": [
+            "source/configurationRightsMySQL.php",
+            "source/ReadingSecurity.php"
+        ]
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "archive": {
+        "exclude": ["/nbproject", "/vendor", "/tests", "/tmp"]
+    }
+}
