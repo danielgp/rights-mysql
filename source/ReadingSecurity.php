@@ -49,8 +49,7 @@ class ReadingSecurity
 
     private function getMySqlUsers()
     {
-        $q = $this->queryMySqlUsersList();
-        return $this->setMySQLquery2Server($q, 'array_numbered')['result'];
+        return $this->setMySQLquery2Server($this->queryMySqlUsersList(), 'array_numbered')['result'];
     }
 
     private function getMySqlUserGrants($listOfMySqlUsers)
