@@ -17,7 +17,6 @@
     },
     "autoload": {
         "psr-4": {
-            "": "source/info/",
             "danielgp\\common_lib\\source\\": "vendor/danielgp/common-lib/source/"
         },
         "classmap": [
