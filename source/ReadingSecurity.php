@@ -54,7 +54,7 @@ class ReadingSecurity
         $sReturn = [];
         foreach ($listOfMySqlUsers as $value) {
             if ($this->mySQLconnection->server_version >= 50708) {
-                $sReturn[] = $this->setQuery2Server($this->queryShowMySqlUsersCreate([$value]), 'value');
+                $sReturn[] = $this->setMySQLquery2Server($this->queryShowMySqlUsersCreate([$value]), 'value');
             }
             $q      = $this->queryShowMySqlUsersGrants([$value]);
             $result = $this->setMySQLquery2Server($q, 'full_array_key_numbered')['result'];
