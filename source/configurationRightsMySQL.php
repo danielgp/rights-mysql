@@ -31,13 +31,12 @@ namespace danielgp\rights_mysql;
 trait configurationRightsMySQL
 {
 
-    protected function configuredMySqlServer()
-    {
+    protected function configuredMySqlServer() {
         return [
             'database' => 'mysql',
             'host'     => '127.0.0.1',
-            'password' => 'GheorgheJR99',
-            'port'     => 5700,
+            'password' => 'password',
+            'port'     => 3306,
             'username' => 'root',
             'verbose'  => 'MySQL @ localhost',
         ];

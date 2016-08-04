@@ -34,9 +34,7 @@ class ReadingSecurity
 {
 
     use configurationRightsMySQL,
-        \danielgp\common_lib\CommonLibLocale,
-        \danielgp\common_lib\DomComponentsByDanielGP,
-        \danielgp\common_lib\MySQLiByDanielGP;
+        \danielgp\common_lib\CommonCode;
 
     public function __construct() {
         $this->setHeaderNoCache('text/html');
@@ -51,20 +49,29 @@ class ReadingSecurity
     }
 
     private function getMySqlUserGrants($listOfMySqlUsers) {
-        $sReturn = [];
-        foreach ($listOfMySqlUsers as $value) {
+        $sRtn = [];
+        foreach ($listOfMySqlUsers as $uVal) {
             if ($this->mySQLconnection->server_version >= 50708) {
-                $sReturn[] = $this->setMySQLquery2Server($this->queryShowMySqlUsersCreate([$value]), 'value');
+                $sRtn[] = $this->setMySQLquery2Server($this->queryShowMySqlUsersCreate([$uVal]), 'value')['result'];
             }
-            $q      = $this->queryShowMySqlUsersGrants([$value]);
-            $result = $this->setMySQLquery2Server($q, 'full_array_key_numbered')['result'];
-            foreach ($result as $value2) {
-                foreach ($value2 as $value3) {
-                    $sReturn[] = $value3;
-                }
+            $universalMySqlGrants = $this->getMySqlUserGrantsUniversal($uVal);
+            foreach ($universalMySqlGrants as $crtUserValue) {
+                $sRtn[] = $crtUserValue;
             }
         }
-        return implode(';<br/>', $sReturn) . ';';
+        return implode(';<br/>', $sRtn) . ';';
+    }
+
+    private function getMySqlUserGrantsUniversal($userValue) {
+        $sReturn = [];
+        $qry     = $this->queryShowMySqlUsersGrants([$userValue]);
+        $result  = $this->setMySQLquery2Server($qry, 'full_array_key_numbered')['result'];
+        foreach ($result as $value2) {
+            foreach ($value2 as $value3) {
+                $sReturn[] = $value3;
+            }
+        }
+        return $sReturn;
     }
 
     private function queryMySqlUsersList() {
