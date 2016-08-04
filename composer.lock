@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "106182ed893b5f274277aebe8aa8d1b8",
+    "hash": "87eab881ce86273f8988c6fecf4c8579",
     "content-hash": "37929778aa1c85ba83decbe4957f5779",
     "packages": [
         {
             "name": "components/flag-icon-css",
-            "version": "0.8.5",
+            "version": "2.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lipis/flag-icon-css.git",
-                "reference": "d590670d79de70237f09b67f473cb20a3b52352b"
+                "reference": "836eca11ecf437ae3d0f0c93dd245ab00d94cee1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lipis/flag-icon-css/zipball/d590670d79de70237f09b67f473cb20a3b52352b",
-                "reference": "d590670d79de70237f09b67f473cb20a3b52352b",
+                "url": "https://api.github.com/repos/lipis/flag-icon-css/zipball/836eca11ecf437ae3d0f0c93dd245ab00d94cee1",
+                "reference": "836eca11ecf437ae3d0f0c93dd245ab00d94cee1",
                 "shasum": ""
             },
             "type": "component",
@@ -43,30 +43,73 @@
                 }
             ],
             "description": "CSS for vector based country flags",
-            "time": "2015-11-15 18:25:09"
+            "time": "2016-05-18 13:50:30"
         },
         {
-            "name": "danielgp/browser-agent-info",
-            "version": "1.1.4",
+            "name": "components/jquery",
+            "version": "2.2.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/danielgp/browser-agent-info.git",
-                "reference": "a5bdbe602afff0a637c3c4b66d3fcd9734fe319f"
+                "url": "https://github.com/components/jquery.git",
+                "reference": "981036fcb56668433a7eb0d1e71190324b4574df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/danielgp/browser-agent-info/zipball/a5bdbe602afff0a637c3c4b66d3fcd9734fe319f",
-                "reference": "a5bdbe602afff0a637c3c4b66d3fcd9734fe319f",
+                "url": "https://api.github.com/repos/components/jquery/zipball/981036fcb56668433a7eb0d1e71190324b4574df",
+                "reference": "981036fcb56668433a7eb0d1e71190324b4574df",
+                "shasum": ""
+            },
+            "type": "component",
+            "extra": {
+                "component": {
+                    "scripts": [
+                        "jquery.js"
+                    ],
+                    "files": [
+                        "jquery.min.js",
+                        "jquery.min.map",
+                        "jquery-migrate.js",
+                        "jquery-migrate.min.js"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "John Resig",
+                    "email": "jeresig@gmail.com"
+                }
+            ],
+            "description": "jQuery JavaScript Library",
+            "homepage": "http://jquery.com",
+            "time": "2016-05-25 06:43:59"
+        },
+        {
+            "name": "danielgp/browser-agent-info",
+            "version": "1.3.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/danielgp/browser-agent-info.git",
+                "reference": "880b48f1c0b7dc348728a60b72ba5636f698b548"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/danielgp/browser-agent-info/zipball/880b48f1c0b7dc348728a60b72ba5636f698b548",
+                "reference": "880b48f1c0b7dc348728a60b72ba5636f698b548",
                 "shasum": ""
             },
             "require": {
-                "danielgp/network-components": ">=1.0",
+                "danielgp/network-components": ">=1.2",
                 "doctrine/cache": ">=1.4",
                 "php": ">=5.4",
-                "piwik/device-detector": ">=3.2"
+                "piwik/device-detector": ">=3.5",
+                "symfony/http-foundation": ">3.0"
             },
             "require-dev": {
-                "phpunit/phpunit": ">=4.7"
+                "phpunit/phpunit": ">=5.2"
             },
             "type": "library",
             "autoload": {
@@ -75,6 +118,7 @@
                     "DeviceDetector\\": "vendor/piwik/device-detector/"
                 },
                 "classmap": [
+                    "source/ArchitecturesCpu.php",
                     "source/BrowserAgentInfosByDanielGP.php"
                 ]
             },
@@ -90,46 +134,60 @@
                 }
             ],
             "description": "Get client information from browser agent string",
-            "time": "2015-10-17 13:52:15"
+            "time": "2016-02-12 12:04:19"
         },
         {
             "name": "danielgp/common-lib",
-            "version": "2.3.7",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/danielgp/common-lib.git",
-                "reference": "71bfcd9c37d772924767c92d1b14f01e31f63cab"
+                "reference": "11029f980c69d93062a9a216f91947656b506e00"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/danielgp/common-lib/zipball/71bfcd9c37d772924767c92d1b14f01e31f63cab",
-                "reference": "71bfcd9c37d772924767c92d1b14f01e31f63cab",
+                "url": "https://api.github.com/repos/danielgp/common-lib/zipball/11029f980c69d93062a9a216f91947656b506e00",
+                "reference": "11029f980c69d93062a9a216f91947656b506e00",
                 "shasum": ""
             },
             "require": {
-                "components/flag-icon-css": "*",
-                "danielgp/browser-agent-info": ">=1.0",
-                "danielgp/network-components": ">=1.0",
+                "components/flag-icon-css": ">=1.0",
+                "components/jquery": ">=2.2,<3.0",
+                "danielgp/browser-agent-info": ">=1.2",
+                "danielgp/network-components": ">=1.2",
                 "ext-curl": "*",
                 "ext-mysqli": "*",
                 "gettext/gettext": ">=3.4",
-                "php": ">=5.5",
-                "symfony/filesystem": ">2.7",
-                "symfony/finder": ">=2.7"
+                "php": "^5.6 || ^7.0",
+                "symfony/filesystem": ">3.0",
+                "symfony/finder": ">=3.0",
+                "symfony/http-foundation": ">3.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "*"
+                "phpunit/php-code-coverage": ">=4.0",
+                "phpunit/phpunit": ">=5.4"
             },
             "type": "library",
             "autoload": {
                 "classmap": [
+                    "source/CommonBasic.php",
                     "source/CommonLibLocale.php",
+                    "source/CommonViews.php",
                     "source/CommonCode.php",
+                    "source/CommonPermissions.php",
+                    "source/DomBasicComponentsByDanielGP.php",
+                    "source/DomCssAndJavascriptByDanielGPwithCDN.php",
+                    "source/DomCssAndJavascriptByDanielGP.php",
+                    "source/DomDynamicSelectByDanielGP.php",
                     "source/DomComponentsByDanielGP.php",
-                    "source/DomComponentsByDanielGPwithCDN.php",
                     "source/MySQLiAdvancedOutput.php",
+                    "source/MySQLiByDanielGPqueriesBasic.php",
                     "source/MySQLiByDanielGPqueries.php",
-                    "source/MySQLiByDanielGP.php"
+                    "source/MySQLiMultipleExecution.php",
+                    "source/MySQLiByDanielGP.php",
+                    "source/MySQLiByDanielGPnumbers.php",
+                    "source/MySQLiByDanielGPstructures.php",
+                    "source/MySQLiByDanielGPtypes.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -144,27 +202,28 @@
                 }
             ],
             "description": "Common functions to be used where needed",
-            "time": "2015-11-15 20:28:26"
+            "time": "2016-07-28 20:25:04"
         },
         {
             "name": "danielgp/network-components",
-            "version": "1.0.2",
+            "version": "1.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/danielgp/network-components.git",
-                "reference": "5445fd39e84323e0804ea154dfad85643b92bb22"
+                "reference": "39bca18214fdd1756a9357b9c6df775b3a9010a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/danielgp/network-components/zipball/5445fd39e84323e0804ea154dfad85643b92bb22",
-                "reference": "5445fd39e84323e0804ea154dfad85643b92bb22",
+                "url": "https://api.github.com/repos/danielgp/network-components/zipball/39bca18214fdd1756a9357b9c6df775b3a9010a3",
+                "reference": "39bca18214fdd1756a9357b9c6df775b3a9010a3",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4"
+                "php": ">=5.4",
+                "symfony/http-foundation": ">3.0"
             },
             "require-dev": {
-                "phpunit/phpunit": ">=4.7"
+                "phpunit/phpunit": ">=5.1"
             },
             "type": "library",
             "autoload": {
@@ -184,37 +243,37 @@
                 }
             ],
             "description": "Common functions to be used where needed",
-            "time": "2015-07-21 15:37:02"
+            "time": "2016-05-17 07:23:44"
         },
         {
             "name": "doctrine/cache",
-            "version": "v1.5.1",
+            "version": "v1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "2b9cec5a5e722010cbebc91713d4c11eaa064d5e"
+                "reference": "f8af318d14bdb0eff0336795b428b547bd39ccb6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/2b9cec5a5e722010cbebc91713d4c11eaa064d5e",
-                "reference": "2b9cec5a5e722010cbebc91713d4c11eaa064d5e",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/f8af318d14bdb0eff0336795b428b547bd39ccb6",
+                "reference": "f8af318d14bdb0eff0336795b428b547bd39ccb6",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2"
+                "php": "~5.5|~7.0"
             },
             "conflict": {
                 "doctrine/common": ">2.2,<2.4"
             },
             "require-dev": {
-                "phpunit/phpunit": ">=3.7",
+                "phpunit/phpunit": "~4.8|~5.0",
                 "predis/predis": "~1.0",
                 "satooshi/php-coveralls": "~0.6"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.5.x-dev"
+                    "dev-master": "1.6.x-dev"
                 }
             },
             "autoload": {
@@ -254,34 +313,35 @@
                 "cache",
                 "caching"
             ],
-            "time": "2015-11-02 18:35:48"
+            "time": "2015-12-31 16:37:02"
         },
         {
             "name": "gettext/gettext",
-            "version": "v3.5.5",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/oscarotero/Gettext.git",
-                "reference": "8d363950369a22dd6087774b1bcac5e63299c43d"
+                "reference": "7efdd4a01afd7fab85a90fb64fb88eeaef06f3b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/oscarotero/Gettext/zipball/8d363950369a22dd6087774b1bcac5e63299c43d",
-                "reference": "8d363950369a22dd6087774b1bcac5e63299c43d",
+                "url": "https://api.github.com/repos/oscarotero/Gettext/zipball/7efdd4a01afd7fab85a90fb64fb88eeaef06f3b1",
+                "reference": "7efdd4a01afd7fab85a90fb64fb88eeaef06f3b1",
                 "shasum": ""
             },
             "require": {
                 "gettext/languages": "2.*",
-                "php": ">=5.3.0"
+                "php": ">=5.4.0"
             },
             "require-dev": {
                 "illuminate/view": "*",
-                "phpunit/phpunit": "~4.0",
+                "symfony/yaml": "~2",
                 "twig/extensions": "*",
                 "twig/twig": "*"
             },
             "suggest": {
                 "illuminate/view": "Is necessary if you want to use the Blade extractor",
+                "symfony/yaml": "Is necessary if you want to use the Yaml extractor/generator",
                 "twig/extensions": "Is necessary if you want to use the Twig extractor",
                 "twig/twig": "Is necessary if you want to use the Twig extractor"
             },
@@ -313,7 +373,7 @@
                 "po",
                 "translation"
             ],
-            "time": "2015-11-11 09:46:53"
+            "time": "2016-06-15 18:14:14"
         },
         {
             "name": "gettext/languages",
@@ -418,16 +478,16 @@
         },
         {
             "name": "piwik/device-detector",
-            "version": "3.4.2",
+            "version": "3.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/piwik/device-detector.git",
-                "reference": "fcb61cc9e669653febdce2cd1a1f0833b569fbb6"
+                "reference": "04fddf60bbeb111bad18a9c50dd73f0a314967f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/piwik/device-detector/zipball/fcb61cc9e669653febdce2cd1a1f0833b569fbb6",
-                "reference": "fcb61cc9e669653febdce2cd1a1f0833b569fbb6",
+                "url": "https://api.github.com/repos/piwik/device-detector/zipball/04fddf60bbeb111bad18a9c50dd73f0a314967f2",
+                "reference": "04fddf60bbeb111bad18a9c50dd73f0a314967f2",
                 "shasum": ""
             },
             "require": {
@@ -465,35 +525,38 @@
                 "parser",
                 "useragent"
             ],
-            "time": "2015-09-09 20:28:18"
+            "time": "2016-08-03 07:11:10"
         },
         {
             "name": "symfony/filesystem",
-            "version": "v2.7.6",
+            "version": "v3.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
-                "reference": "56fd6df73be859323ff97418d97edc1d756df6df"
+                "reference": "bb29adceb552d202b6416ede373529338136e84f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/56fd6df73be859323ff97418d97edc1d756df6df",
-                "reference": "56fd6df73be859323ff97418d97edc1d756df6df",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/bb29adceb552d202b6416ede373529338136e84f",
+                "reference": "bb29adceb552d202b6416ede373529338136e84f",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.9"
+                "php": ">=5.5.9"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.7-dev"
+                    "dev-master": "3.1-dev"
                 }
             },
             "autoload": {
                 "psr-4": {
                     "Symfony\\Component\\Filesystem\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -511,35 +574,38 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2015-10-18 20:23:18"
+            "time": "2016-07-20 05:44:26"
         },
         {
             "name": "symfony/finder",
-            "version": "v2.7.6",
+            "version": "v3.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "2ffb4e9598db3c48eb6d0ae73b04bbf09280c59d"
+                "reference": "8201978de88a9fa0923e18601bb17f1df9c721e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/2ffb4e9598db3c48eb6d0ae73b04bbf09280c59d",
-                "reference": "2ffb4e9598db3c48eb6d0ae73b04bbf09280c59d",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/8201978de88a9fa0923e18601bb17f1df9c721e7",
+                "reference": "8201978de88a9fa0923e18601bb17f1df9c721e7",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.9"
+                "php": ">=5.5.9"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.7-dev"
+                    "dev-master": "3.1-dev"
                 }
             },
             "autoload": {
                 "psr-4": {
                     "Symfony\\Component\\Finder\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -557,7 +623,119 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2015-10-11 09:39:48"
+            "time": "2016-06-29 05:41:56"
+        },
+        {
+            "name": "symfony/http-foundation",
+            "version": "v3.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/http-foundation.git",
+                "reference": "399a44b73f6c176de40fb063dcdaa578bcfb94d6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/399a44b73f6c176de40fb063dcdaa578bcfb94d6",
+                "reference": "399a44b73f6c176de40fb063dcdaa578bcfb94d6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9",
+                "symfony/polyfill-mbstring": "~1.1"
+            },
+            "require-dev": {
+                "symfony/expression-language": "~2.8|~3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\HttpFoundation\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony HttpFoundation Component",
+            "homepage": "https://symfony.com",
+            "time": "2016-07-17 14:02:08"
+        },
+        {
+            "name": "symfony/polyfill-mbstring",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-mbstring.git",
+                "reference": "dff51f72b0706335131b00a7f49606168c582594"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/dff51f72b0706335131b00a7f49606168c582594",
+                "reference": "dff51f72b0706335131b00a7f49606168c582594",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "suggest": {
+                "ext-mbstring": "For best performance"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Mbstring\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for the Mbstring extension",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "mbstring",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "time": "2016-05-18 14:26:46"
         }
     ],
     "packages-dev": [],
