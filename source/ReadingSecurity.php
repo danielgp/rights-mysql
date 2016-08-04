@@ -38,8 +38,7 @@ class ReadingSecurity
         \danielgp\common_lib\DomComponentsByDanielGP,
         \danielgp\common_lib\MySQLiByDanielGP;
 
-    public function __construct()
-    {
+    public function __construct() {
         $this->setHeaderNoCache('text/html');
         echo $this->setHeaderCommon();
         $this->connectToMySql($this->configuredMySqlServer());
@@ -47,15 +46,16 @@ class ReadingSecurity
         echo $this->setFooterCommon();
     }
 
-    private function getMySqlUsers()
-    {
+    private function getMySqlUsers() {
         return $this->setMySQLquery2Server($this->queryMySqlUsersList(), 'array_numbered')['result'];
     }
 
-    private function getMySqlUserGrants($listOfMySqlUsers)
-    {
+    private function getMySqlUserGrants($listOfMySqlUsers) {
         $sReturn = [];
         foreach ($listOfMySqlUsers as $value) {
+            if ($this->mySQLconnection->server_version >= 50708) {
+                $sReturn[] = $this->setQuery2Server($this->queryShowMySqlUsersCreate([$value]), 'value');
+            }
             $q      = $this->queryShowMySqlUsersGrants([$value]);
             $result = $this->setMySQLquery2Server($q, 'full_array_key_numbered')['result'];
             foreach ($result as $value2) {
@@ -67,15 +67,17 @@ class ReadingSecurity
         return implode(';<br/>', $sReturn) . ';';
     }
 
-    private function queryMySqlUsersList()
-    {
+    private function queryMySqlUsersList() {
         return 'SELECT CONCAT("\"", `User`, "\"@\"", `Host`, "\"") AS `UserHost` '
                 . 'FROM `mysql`.`user` '
                 . 'ORDER BY `host`, `user`;';
     }
 
-    private function queryShowMySqlUsersGrants($parameters)
-    {
+    private function queryShowMySqlUsersCreate($parameters) {
+        return 'SHOW CREATE USER ' . filter_var($parameters[0], FILTER_SANITIZE_STRING) . ';';
+    }
+
+    private function queryShowMySqlUsersGrants($parameters) {
         return 'SHOW GRANTS FOR ' . filter_var($parameters[0], FILTER_SANITIZE_STRING) . ';';
     }
 }
