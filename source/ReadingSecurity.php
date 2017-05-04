@@ -36,19 +36,23 @@ class ReadingSecurity
     use configurationRightsMySQL,
         \danielgp\common_lib\CommonCode;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->setHeaderNoCache('text/html');
+        $this->initializeSprGlbAndSession();
         echo $this->setHeaderCommon();
         $this->connectToMySql($this->configuredMySqlServer());
         echo $this->getMySqlUserGrants($this->getMySqlUsers());
         echo $this->setFooterCommon();
     }
 
-    private function getMySqlUsers() {
+    private function getMySqlUsers()
+    {
         return $this->setMySQLquery2Server($this->queryMySqlUsersList(), 'array_numbered')['result'];
     }
 
-    private function getMySqlUserGrants($listOfMySqlUsers) {
+    private function getMySqlUserGrants($listOfMySqlUsers)
+    {
         $sRtn = [];
         foreach ($listOfMySqlUsers as $uVal) {
             if ($this->mySQLconnection->server_version >= 50708) {
@@ -62,7 +66,8 @@ class ReadingSecurity
         return implode(';<br/>', $sRtn) . ';';
     }
 
-    private function getMySqlUserGrantsUniversal($userValue) {
+    private function getMySqlUserGrantsUniversal($userValue)
+    {
         $sReturn = [];
         $qry     = $this->queryShowMySqlUsersGrants([$userValue]);
         $result  = $this->setMySQLquery2Server($qry, 'full_array_key_numbered')['result'];
@@ -74,17 +79,20 @@ class ReadingSecurity
         return $sReturn;
     }
 
-    private function queryMySqlUsersList() {
+    private function queryMySqlUsersList()
+    {
         return 'SELECT CONCAT("\"", `User`, "\"@\"", `Host`, "\"") AS `UserHost` '
-                . 'FROM `mysql`.`user` '
-                . 'ORDER BY `host`, `user`;';
+            . 'FROM `mysql`.`user` '
+            . 'ORDER BY `host`, `user`;';
     }
 
-    private function queryShowMySqlUsersCreate($parameters) {
+    private function queryShowMySqlUsersCreate($parameters)
+    {
         return 'SHOW CREATE USER ' . filter_var($parameters[0], FILTER_SANITIZE_STRING) . ';';
     }
 
-    private function queryShowMySqlUsersGrants($parameters) {
+    private function queryShowMySqlUsersGrants($parameters)
+    {
         return 'SHOW GRANTS FOR ' . filter_var($parameters[0], FILTER_SANITIZE_STRING) . ';';
     }
 }
