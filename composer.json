@@ -11,9 +11,9 @@
         }
     ],
     "require": {
-        "php": ">=5.5",
+        "php": "^7.2 || ^7.3 || ^7.4",
         "ext-mysqli": "*",
-        "danielgp/common-lib": "*"
+        "danielgp/common-lib": "^3"
     },
     "autoload": {
         "psr-4": {
